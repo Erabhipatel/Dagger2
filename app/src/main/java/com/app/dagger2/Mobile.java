@@ -6,12 +6,12 @@ import javax.inject.Inject;
 
 public class Mobile {
 
-    @Inject
-    Battery battery;
+    private Battery battery;
     private Processor processor;
 
     @Inject
-    public Mobile(Processor processor) {
+    public Mobile(Battery battery, Processor processor) {
+        this.battery = battery;
         this.processor = processor;
         Log.i("TAG", "Mobile: ");
     }
