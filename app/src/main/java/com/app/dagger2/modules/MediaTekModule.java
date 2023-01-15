@@ -1,12 +1,11 @@
-package com.app.dagger2.component;
+package com.app.dagger2.modules;
 
 import com.app.dagger2.MediaTek;
 import com.app.dagger2.Processor;
 
-import javax.inject.Inject;
-
 import dagger.Binds;
 import dagger.Module;
+import dagger.Provides;
 
 @Module
 public abstract class MediaTekModule {

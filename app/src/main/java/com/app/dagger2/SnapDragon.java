@@ -8,6 +8,7 @@ public class SnapDragon implements Processor {
 
     int clockSpeed;
 
+    @Inject
     public SnapDragon(int clockSpeed) {
         this.clockSpeed = clockSpeed;
     }

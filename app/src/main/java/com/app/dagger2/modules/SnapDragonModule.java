@@ -16,7 +16,12 @@ public class SnapDragonModule {
     }
 
     @Provides
-    Processor provideProcessor(){
-        return new SnapDragon(clockSpeed);
+    int provideClockSpeed(){
+        return clockSpeed;
+    }
+
+    @Provides
+    Processor provideProcessor(SnapDragon snapdragon){
+        return snapdragon;
     }
 }

@@ -4,8 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.app.dagger2.component.DaggerMobileComponent;
+
 import com.app.dagger2.component.MobileComponent;
+import com.app.dagger2.component.DaggerMobileComponent;
 import com.app.dagger2.modules.BatteryModule;
 import com.app.dagger2.modules.SnapDragonModule;
 
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MobileComponent component = DaggerMobileComponent.builder()
-                .snapDragonModule(new SnapDragonModule(3))
-                .batteryModule(new BatteryModule())
+                .setClockSpeed(5)
+                .setCore(8)
                 .build();
         component.inject(this);
         mobile.start();
