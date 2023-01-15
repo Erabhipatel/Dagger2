@@ -22,6 +22,7 @@ public class Mobile {
     }
 
     public void start(){
+        processor.start();
         Log.i("TAG", "run: ");
     }
 }
