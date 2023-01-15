@@ -9,8 +9,14 @@ import dagger.Provides;
 @Module
 public class SnapDragonModule {
 
+    int clockSpeed;
+
+    public SnapDragonModule(int clockSpeed) {
+        this.clockSpeed = clockSpeed;
+    }
+
     @Provides
-    Processor provideProcessor(SnapDragon snapDragon){
-        return snapDragon;
+    Processor provideProcessor(){
+        return new SnapDragon(clockSpeed);
     }
 }

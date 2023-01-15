@@ -8,7 +8,7 @@ import com.app.dagger2.modules.SnapDragonModule;
 
 import dagger.Component;
 
-@Component(modules = {BatteryModule.class, MediaTekModule.class})
+@Component(modules = {BatteryModule.class, SnapDragonModule.class})
 public interface MobileComponent {
 
     void inject(MainActivity mainActivity);

@@ -6,12 +6,14 @@ import javax.inject.Inject;
 
 public class SnapDragon implements Processor {
 
-    @Inject
-    public SnapDragon() {
+    int clockSpeed;
+
+    public SnapDragon(int clockSpeed) {
+        this.clockSpeed = clockSpeed;
     }
 
     @Override
     public void start() {
-        Log.i("TAG", "SnapDragon start: ");
+        Log.i("TAG", "SnapDragon start with clockSpeed "+clockSpeed);
     }
 }
