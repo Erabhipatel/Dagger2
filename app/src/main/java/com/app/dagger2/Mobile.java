@@ -7,12 +7,14 @@ import javax.inject.Inject;
 public class Mobile {
 
     private Battery battery;
+    private Camera camera;
     private Processor processor;
 
     @Inject
-    public Mobile(Battery battery, Processor processor) {
+    public Mobile(Battery battery, Processor processor, Camera camera) {
         this.battery = battery;
         this.processor = processor;
+        this.camera = camera;
         Log.i("TAG", "Mobile: ");
     }
 

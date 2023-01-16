@@ -21,10 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileComponent component = DaggerMobileComponent.builder()
-                .setClockSpeed(5)
-                .setCore(8)
-                .build();
+        MobileComponent component = DaggerMobileComponent.factory().create(1,2, 500);
         component.inject(this);
         mobile.start();
     }

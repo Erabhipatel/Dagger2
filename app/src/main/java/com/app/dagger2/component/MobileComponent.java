@@ -12,21 +12,29 @@ import javax.inject.Named;
 import dagger.BindsInstance;
 import dagger.Component;
 
-@Component(modules = {BatteryModule.class, MediaTekModule.class})
+@Component(modules = {BatteryModule.class, MediaTekModule.class, CameraModule.class})
 public interface MobileComponent {
 
     void inject(MainActivity mainActivity);
 
-    @Component.Builder
-    interface Builder{
+//    @Component.Builder
+//    interface Builder{
+//
+//        @BindsInstance
+//        Builder setClockSpeed(@Named("clockSpeed") int clockSpeed);
+//
+//        @BindsInstance
+//        Builder setCore(@Named("core")int core);
+//
+//        MobileComponent build();
+//    }
 
-        @BindsInstance
-        Builder setClockSpeed(@Named("clockSpeed") int clockSpeed);
+    @Component.Factory
+    interface Factory {
 
-        @BindsInstance
-        Builder setCore(@Named("core")int core);
-
-        MobileComponent build();
+        MobileComponent create(@BindsInstance @Named("clockSpeed") int clockSpeed,
+                               @BindsInstance @Named("core")int core,
+                               @BindsInstance @Named("pixel")int pixel);
     }
 
 }
